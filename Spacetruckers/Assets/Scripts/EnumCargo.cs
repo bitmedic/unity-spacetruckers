@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnumGoods
+public enum EnumCargo
 {
     _Nichts, 
     LandLuft,
