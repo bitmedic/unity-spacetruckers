@@ -211,11 +211,43 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216459170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.37, y: 0, z: 3.75}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.3036976, y: -1.36, z: -6.3650494}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_Children: []
+  m_Father: {fileID: 416857658}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416857657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416857658}
+  m_Layer: 0
+  m_Name: Planets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416857658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416857657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06630223, y: -0.7140255, z: 10.115049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1012926800}
+  - {fileID: 216459174}
+  - {fileID: 2103164454}
+  - {fileID: 1964803820}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -310,11 +342,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012473483}
   m_LocalRotation: {x: -0, y: -0.9271839, z: 0, w: -0.37460646}
-  m_LocalPosition: {x: -7.01, y: 1.5, z: 3.83}
+  m_LocalPosition: {x: 7.16, y: 0, z: 1.04}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -224, z: 0}
 --- !u!114 &1012473488
 MonoBehaviour:
@@ -358,7 +390,7 @@ GameObject:
   - component: {fileID: 1012926800}
   - component: {fileID: 1012926801}
   m_Layer: 7
-  m_Name: TruckTarget1
+  m_Name: Station1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,11 +403,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012926799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.584, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.3036976, y: 0, z: -6.3650494}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
-  m_Father: {fileID: 216459174}
+  m_Father: {fileID: 1660120783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1012926801
@@ -402,7 +434,7 @@ GameObject:
   - component: {fileID: 1092912917}
   - component: {fileID: 1092912918}
   m_Layer: 7
-  m_Name: TruckTarget3
+  m_Name: Station2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,11 +448,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092912916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58400005, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.573699, y: 0, z: -13.80505}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 1964803820}
-  m_RootOrder: 0
+  m_Father: {fileID: 1660120783}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1092912918
 SphereCollider:
@@ -562,7 +594,7 @@ GameObject:
   - component: {fileID: 1552692786}
   - component: {fileID: 1552692787}
   m_Layer: 7
-  m_Name: TruckTarget2
+  m_Name: Station3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,11 +608,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552692785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58400005, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.5663023, y: 0, z: -9.475049}
+  m_LocalScale: {x: 3.629, y: 3.629, z: 3.629}
   m_Children: []
-  m_Father: {fileID: 2103164454}
-  m_RootOrder: 0
+  m_Father: {fileID: 1660120783}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1552692787
 SphereCollider:
@@ -595,6 +627,39 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1660120782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660120783}
+  m_Layer: 0
+  m_Name: Stations
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660120783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660120782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06630223, y: -0.7140255, z: 10.115049}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1012926800}
+  - {fileID: 1092912917}
+  - {fileID: 1552692786}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964803816
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,13 +748,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964803816}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 0, z: -3.69}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_Children:
-  - {fileID: 1092912917}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.573699, y: -1.32, z: -13.80505}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 416857658}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056715660
 GameObject:
@@ -872,11 +936,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103164450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0, z: 0.64}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
-  m_Children:
-  - {fileID: 1552692786}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.5663023, y: -1.82, z: -9.475049}
+  m_LocalScale: {x: 3.629, y: 3.629, z: 3.629}
+  m_Children: []
+  m_Father: {fileID: 416857658}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

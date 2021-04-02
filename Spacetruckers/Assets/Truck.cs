@@ -21,7 +21,7 @@ public class Truck : MonoBehaviour
         if (target)
         {
             // stay on current y level
-            Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z);
+            Vector3 targetPosition = target.position;
 
             transform.forward = Vector3.Lerp(transform.forward, targetPosition - transform.position, turnSpeed * Time.deltaTime);
 
