@@ -51,5 +51,26 @@ public class Truck : MonoBehaviour
     public void LoadCargo(EnumCargo cargo)
     {
         loadedCargo = cargo;
+        SetCargoColor();
+    }
+
+    private void SetCargoColor()
+    {
+        MeshRenderer mr = cargoBox.GetComponent<MeshRenderer>();
+        Color color = Color.magenta; 
+        switch (loadedCargo)
+        {
+            case EnumCargo._Nichts:
+                color = Color.black;
+                break;
+            case EnumCargo.TeddyBaeren:
+                color = Color.Lerp(Color.white, Color.magenta, 0.5f);
+                break;
+            case EnumCargo.LandLuft:
+                color = Color.Lerp(Color.cyan, Color.green, 0.25f);
+                break;
+        }
+
+        mr.material.color = color;
     }
 }
