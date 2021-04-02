@@ -24,6 +24,7 @@ public class TruckClickerController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // if left button pressed...
         {
+            Debug.Log("Left Click");
             if (this.isSelectDestinationActive)
             {
                 // if selection a detsination is active, select the next click as detsination
@@ -36,8 +37,17 @@ public class TruckClickerController : MonoBehaviour
                 float distance;
                 if (planeTruck.Raycast(ray, out distance))
                 {
-                    // set truck detsination to the click location on the plane of the truck
-                    this.truck.position = ray.GetPoint(distance);
+                    // set truck target to the click location on the plane of the truck
+                    //TODO this should be a prefab
+                    GameObject target = new GameObject();
+                    target.layer = LayerMask.NameToLayer("Stations");
+                    CapsuleCollider stopCollider = target.AddComponent<CapsuleCollider>();
+                    stopCollider.radius = 0.1f;
+                    stopCollider.height = 10f;
+                    stopCollider.isTrigger = true;
+
+                    target.transform.position = ray.GetPoint(distance);
+                    GetComponent<Truck>().target = target.transform;
                 }
 
                 this.setDestinationSelectionPopup(false);

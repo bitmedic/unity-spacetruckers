@@ -35,6 +35,7 @@ public class Truck : MonoBehaviour
     {
         if (other.transform == target)
         {
+            Destroy(target.gameObject);
             target = null;
         }
     }
