@@ -12,11 +12,12 @@ public class TruckClickerController : MonoBehaviour
     private bool isSelectDestinationActive = false;
     private Vector3 truckDestination;
 
+
     void Start()
     {
         this.truck = this.GetComponent<Transform>(); // get truck transform object
 
-        this.selectDestinationCanvas.gameObject.SetActive(false); // deactive destination popup at start
+        this.setDestinationSelectionPopup(false);
     }
 
     void Update()
@@ -38,13 +39,16 @@ public class TruckClickerController : MonoBehaviour
                     // set truck detsination to the click location on the plane of the truck
                     this.truck.position = ray.GetPoint(distance);
                 }
-            }
-            else if (this.isSelectDestinationPopupOpen == true)
-            {
-             
 
-                // TODO: Close Popup if not clicked in popup
+                this.setDestinationSelectionPopup(false);
+                this.isSelectDestinationActive = false;
             }
+            //else if (this.isSelectDestinationPopupOpen == true)
+            //{
+            //    //this.setDestinationSelectionPopup(false);
+
+            //    // TODO: Close Popup if not clicked in popup
+            //}
             // else select a detsination is not active, do nothing for now 
 
 
@@ -70,21 +74,20 @@ public class TruckClickerController : MonoBehaviour
                 this.truck.position.y + 1, 
                 this.truck.position.z /*+ (selectDestinationTransform.size.z / 2)*/);
 
-            this.selectDestinationCanvas.gameObject.SetActive(true);
-
-            this.isSelectDestinationPopupOpen = true;
+            this.setDestinationSelectionPopup(true);
         }
     }
 
 
     public void SelectDetsinationButtonClick()
     {
-        // deactivate select destination popup
-        this.isSelectDestinationPopupOpen = false;
-        this.selectDestinationCanvas.gameObject.SetActive(false);
-
         // activate select destination so the next click will be set as destination
         this.isSelectDestinationActive = true; 
     }
 
+    internal void setDestinationSelectionPopup(bool active)
+    {
+        this.selectDestinationCanvas.gameObject.SetActive(active);
+        this.isSelectDestinationPopupOpen = active;
+    }
 }
