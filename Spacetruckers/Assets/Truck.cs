@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Truck : MonoBehaviour
+{
+
+    public Transform target;
+    public float truckSpeed = 5;
+    public float turnSpeed = 10;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target)
+        {
+            // stay on current y level
+            Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, target.position.z);
+
+            transform.forward = Vector3.Lerp(transform.forward, targetPosition - transform.position, turnSpeed * Time.deltaTime);
+
+            transform.position += transform.forward * truckSpeed * Time.deltaTime;
+        }
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform == target)
+        {
+            target = null;
+        }
+    }
+}
