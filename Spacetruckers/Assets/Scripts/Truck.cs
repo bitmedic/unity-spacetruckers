@@ -9,6 +9,9 @@ public class Truck : MonoBehaviour
     public float truckSpeed = 5;
     public float turnSpeed = 10;
 
+
+    internal EnumCargo loadedCargo;
+
     // Start is called before the first frame update
     void Start()
     {

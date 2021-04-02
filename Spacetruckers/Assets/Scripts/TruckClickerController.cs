@@ -15,6 +15,8 @@ public class TruckClickerController : MonoBehaviour
     private bool isSelectDestinationActive = false;
     private Vector3 truckDestination;
 
+    private EnumCargo toLoadCargo = EnumCargo._Nichts;
+
 
     void Start()
     {
@@ -37,6 +39,9 @@ public class TruckClickerController : MonoBehaviour
                 if (targetLocation != Vector3.zero)
                 {
                     // set truck target to the click location on the plane of the truck
+
+                    this.truck.gameObject.GetComponent<Truck>().loadedCargo = this.toLoadCargo;
+
                     //TODO this should be a prefab
                     GameObject target = new GameObject();
                     target.layer = LayerMask.NameToLayer("Stations");
@@ -104,6 +109,7 @@ public class TruckClickerController : MonoBehaviour
                 PlanetCargoController pcc = planet.GetComponent<PlanetCargoController>();
                 if (!pcc.producedGoods.Equals(EnumCargo._Nichts)) // if anything gets produced
                 {
+                    this.toLoadCargo = pcc.producedGoods;
                     loadCargoAndSelectDestinationButton.GetComponentInChildren<Text>().text = "Load " + pcc.producedGoods + " & \nSelectdestination";
                     loadCargoAndSelectDestinationButton.gameObject.SetActive(true);
                 }
@@ -120,6 +126,14 @@ public class TruckClickerController : MonoBehaviour
 
         // activate select destination so the next click will be set as destination
         this.isSelectDestinationActive = true; 
+    }
+
+    public void LoadCargoAndSelectDestinationButtonClick()
+    {
+        this.setDestinationSelectionPopupActive(false);
+
+        // activate select destination so the next click will be set as destination
+        this.isSelectDestinationActive = true;
     }
 
     internal void setDestinationSelectionPopupActive(bool active)
@@ -161,8 +175,7 @@ public class TruckClickerController : MonoBehaviour
     private GameObject getPlanetAtLocation(Ray locationRay)
     {
         // first check if planet was clicked
-        RaycastHit hit;
-        if (Physics.Raycast(locationRay, out hit))
+        foreach(RaycastHit hit in Physics.RaycastAll(locationRay))
         {
             // if a planet was clicked
             if (hit.transform.gameObject.CompareTag("Planet"))
