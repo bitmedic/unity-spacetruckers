@@ -53,12 +53,12 @@ public class TruckClickerController : MonoBehaviour
                 this.setDestinationSelectionPopup(false);
                 this.isSelectDestinationActive = false;
             }
-            //else if (this.isSelectDestinationPopupOpen == true)
-            //{
-            //    //this.setDestinationSelectionPopup(false);
+            else if (this.isSelectDestinationPopupOpen == true)
+            {
+                //this.setDestinationSelectionPopup(false);
 
-            //    // TODO: Close Popup if not clicked in popup
-            //}
+                // TODO: Close Popup if not clicked in popup
+            }
             // else select a detsination is not active, do nothing for now 
 
 
@@ -91,6 +91,8 @@ public class TruckClickerController : MonoBehaviour
 
     public void SelectDetsinationButtonClick()
     {
+        this.setDestinationSelectionPopup(false);
+
         // activate select destination so the next click will be set as destination
         this.isSelectDestinationActive = true; 
     }
