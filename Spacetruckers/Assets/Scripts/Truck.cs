@@ -46,6 +46,7 @@ public class Truck : MonoBehaviour
         {
             Destroy(target.gameObject);
             target = null;
+            this.GetComponentInChildren<TruckAudioController>().setTruckMoving(false);
         }
     }
 

@@ -53,6 +53,7 @@ public class TruckClickerController : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Truck"))
             {
                 this.truck.GetComponent<HighlightOnMouseover>().SetSelected(true);
+                this.truck.GetComponentInChildren<TruckAudioController>().setTruckSelected(true);
 
                 if (this.isSelectCargoPopupOpen) // if popup is already open do nothing
                 {
@@ -107,6 +108,8 @@ public class TruckClickerController : MonoBehaviour
 
                 target.transform.position = targetLocation;
                 GetComponent<Truck>().target = target.transform;
+
+                this.truck.GetComponentInChildren<TruckAudioController>().setTruckMoving(true);
             }
 
             this.setDestinationSelectionPopupActive(false);
