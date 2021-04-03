@@ -166,7 +166,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a560074b0d0232344b9eda29af533cee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.201
+  m_Volume: 0.165
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -517,7 +517,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0961e6bdf9060d5488c3c5b1034e4819, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.126
+  m_Volume: 0.158
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -730,7 +730,6 @@ MonoBehaviour:
   truckSpeed: 2.5
   turnSpeed: 0.5
   loadedCargo: {fileID: 0}
-  AtPlanet: 0
 --- !u!54 &1012473489
 Rigidbody:
   m_ObjectHideFlags: 0

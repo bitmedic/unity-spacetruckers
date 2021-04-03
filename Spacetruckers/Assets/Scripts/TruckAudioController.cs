@@ -36,7 +36,7 @@ public class TruckAudioController : MonoBehaviour
         if (this.isTruckMoving == true)
         {
             this.start.Stop();
-            this.idle.Stop();
+            this.idle.Play();
             this.booster.Play();
         }
         else
