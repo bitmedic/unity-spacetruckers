@@ -18,6 +18,7 @@ public class Truck : MonoBehaviour
     void Start()
     {
         cargoBox = transform.Find("Cargo")?.gameObject;
+        SetCargoColor();
     }
 
     // Update is called once per frame
@@ -57,7 +58,7 @@ public class Truck : MonoBehaviour
     private void SetCargoColor()
     {
         MeshRenderer mr = cargoBox.GetComponent<MeshRenderer>();
-        Color color = Color.magenta; 
+        Color color = Color.grey; 
         switch (loadedCargo)
         {
             case EnumCargo._Nichts:
