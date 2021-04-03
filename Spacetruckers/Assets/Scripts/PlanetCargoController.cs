@@ -4,5 +4,30 @@ using UnityEngine;
 
 public class PlanetCargoController : MonoBehaviour
 {
-    public EnumCargo producedGoods = EnumCargo._Nichts;
+    public CargoSO producedGoods = null;
+
+    private Contract currentContract;
+
+    ContractSign sign;
+
+    void Start()
+    {
+        sign = GetComponentInChildren<ContractSign>(true);
+
+        SetContract(null);
+    }
+
+    public void SetContract(Contract newContract)
+    {
+        currentContract = newContract;
+        if (currentContract == null)
+        {
+            sign.gameObject.SetActive(false);
+        }
+        else
+        {
+            sign.gameObject.SetActive(true);
+            sign.UpdateContract(newContract);
+        }
+    }
 }

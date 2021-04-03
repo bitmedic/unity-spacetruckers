@@ -10,7 +10,7 @@ public class Truck : MonoBehaviour
     public float turnSpeed = 10;
 
     [SerializeField]
-    private EnumCargo loadedCargo;
+    private CargoSO loadedCargo;
 
     private GameObject cargoBox;
 
@@ -49,7 +49,7 @@ public class Truck : MonoBehaviour
         }
     }
 
-    public void LoadCargo(EnumCargo cargo)
+    public void LoadCargo(CargoSO cargo)
     {
         loadedCargo = cargo;
         SetCargoColor();
@@ -58,20 +58,9 @@ public class Truck : MonoBehaviour
     private void SetCargoColor()
     {
         MeshRenderer mr = cargoBox.GetComponent<MeshRenderer>();
-        Color color = Color.grey; 
-        switch (loadedCargo)
-        {
-            case EnumCargo._Nichts:
-                color = Color.black;
-                break;
-            case EnumCargo.TeddyBaeren:
-                color = Color.Lerp(Color.white, Color.magenta, 0.5f);
-                break;
-            case EnumCargo.LandLuft:
-                color = Color.Lerp(Color.cyan, Color.green, 0.25f);
-                break;
+        if (loadedCargo != null)
+        { 
+            mr.material.color = loadedCargo.cargoColor;
         }
-
-        mr.material.color = color;
     }
 }

@@ -15,7 +15,7 @@ public class TruckClickerController : MonoBehaviour
     private bool isSelectDestinationActive = false;
     private Vector3 truckDestination;
 
-    private EnumCargo toLoadCargo = EnumCargo._Nichts;
+    private CargoSO toLoadCargo = null;
 
 
     void Start()

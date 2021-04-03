@@ -5,27 +5,23 @@ using UnityEngine;
 public class Contract
 {
     public GameObject targetPlanet;
-    public EnumCargo contractCargo;
+    public EnumCargo contractCargoType;
+    public CargoSO contractCargo;
     public float contractValue;
     public float contractDuration;
 
-    public Contract(GameObject targetPlanet, EnumCargo contractCargo, float contractValue, float contractDuration)
+    public Contract(GameObject targetPlanet, EnumCargo contractCargoType, float contractValue, float contractDuration)
     {
         this.targetPlanet = targetPlanet;
-        this.contractCargo = contractCargo;
+        this.contractCargoType = contractCargoType;
         this.contractValue = contractValue;
         this.contractDuration = contractDuration;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public Contract(GameObject targetPlanet, CargoSO contractCargo)
     {
-        
-    }
+        this.targetPlanet = targetPlanet;
+        this.contractCargo = contractCargo;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
