@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4de9a84d0e7abe4baa4254bdaef3571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0.25431582, g: 0.8113208, b: 0.057404764, a: 1}
   width: 2
 --- !u!4 &1012473487
 Transform:
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbad5ede8b7deef41942babc0d083cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  producedGoods: 0
+  producedGoods: 6
 --- !u!114 &1964803822
 MonoBehaviour:
   m_ObjectHideFlags: 0
