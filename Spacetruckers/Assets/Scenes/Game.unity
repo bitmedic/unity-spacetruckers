@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1012473488}
   - component: {fileID: 1012473485}
   - component: {fileID: 1012473484}
+  - component: {fileID: 1012473486}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Truck
@@ -251,6 +252,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1258053393}
   selectDestinationCanvas: {fileID: 1076562939}
+--- !u!114 &1012473486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012473483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4de9a84d0e7abe4baa4254bdaef3571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  width: 2
 --- !u!4 &1012473487
 Transform:
   m_ObjectHideFlags: 0
@@ -5470,6 +5485,7 @@ GameObject:
   - component: {fileID: 1964803817}
   - component: {fileID: 1964803821}
   - component: {fileID: 1964803822}
+  - component: {fileID: 1964803823}
   m_Layer: 0
   m_Name: Red Planet
   m_TagString: Planet
@@ -5488,7 +5504,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1964803818
 MeshRenderer:
@@ -5580,6 +5596,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 9
+--- !u!114 &1964803823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964803816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4de9a84d0e7abe4baa4254bdaef3571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  width: 2
 --- !u!1 &2056715660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,6 +5717,7 @@ GameObject:
   - component: {fileID: 2103164451}
   - component: {fileID: 2103164455}
   - component: {fileID: 2103164456}
+  - component: {fileID: 2103164457}
   m_Layer: 0
   m_Name: Green Planet
   m_TagString: Planet
@@ -5796,6 +5827,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -3
+--- !u!114 &2103164457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103164450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4de9a84d0e7abe4baa4254bdaef3571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  width: 2
 --- !u!33 &223771406104434568
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5873,6 +5918,7 @@ GameObject:
   - component: {fileID: 919132148272486992}
   - component: {fileID: 919132148272486993}
   - component: {fileID: 919132148272486994}
+  - component: {fileID: 919132148272486995}
   m_Layer: 0
   m_Name: Blue Planet
   m_TagString: Planet
@@ -5919,6 +5965,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   producedGoods: 1
+--- !u!114 &919132148272486995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148272486991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4de9a84d0e7abe4baa4254bdaef3571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  width: 2
 --- !u!33 &964422869307409938
 MeshFilter:
   m_ObjectHideFlags: 0
