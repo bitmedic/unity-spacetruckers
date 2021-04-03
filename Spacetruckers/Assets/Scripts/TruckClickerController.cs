@@ -40,6 +40,9 @@ public class TruckClickerController : MonoBehaviour
 
     public void OnMouseClick()
     {
+        this.truck.GetComponent<HighlightOnMouseover>().SetSelected(false);
+
+
         Ray ray = this.mainCamera.ScreenPointToRay(Input.mousePosition);
 
         // first check if planet was clicked
@@ -49,6 +52,8 @@ public class TruckClickerController : MonoBehaviour
             // if the truck was clicked on the popup is not already open
             if (hit.transform.gameObject.CompareTag("Truck"))
             {
+                this.truck.GetComponent<HighlightOnMouseover>().SetSelected(true);
+
                 if (this.isSelectCargoPopupOpen) // if popup is already open do nothing
                 {
                     return;
@@ -83,7 +88,8 @@ public class TruckClickerController : MonoBehaviour
                 return; // if truck was clicked this was it. For all other cases (planet or nothing was clicked) continue
             }
         }
-          
+
+
         // if selection a destination is active, select the next click as destination
         if (this.isSelectDestinationActive)
         {
