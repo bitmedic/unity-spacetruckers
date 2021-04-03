@@ -10,7 +10,6 @@ public class TruckClickerController : MonoBehaviour
     public Camera mainCamera;
     public Canvas selectDestinationCanvas;
 
-    private Transform truck;
     private Button loadCargoAndSelectDestinationButton;
     private bool isSelectCargoPopupOpen = false;
     private bool isSelectDestinationActive = false;
@@ -18,10 +17,8 @@ public class TruckClickerController : MonoBehaviour
 
     private CargoSO toLoadCargo = null;
 
-
     void Start()
     {
-        this.truck = this.GetComponent<Transform>(); // get truck transform object
         this.loadCargoAndSelectDestinationButton = GameObject.Find("SelectCargoButton").GetComponent<Button>();
 
         this.setDestinationSelectionPopupActive(false);
@@ -40,7 +37,7 @@ public class TruckClickerController : MonoBehaviour
 
     public void OnMouseClick()
     {
-        this.truck.GetComponent<HighlightOnMouseover>().SetSelected(false);
+        GetComponent<HighlightOnMouseover>().SetSelected(false);
 
 
         Ray ray = this.mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -52,8 +49,8 @@ public class TruckClickerController : MonoBehaviour
             // if the truck was clicked on the popup is not already open
             if (hit.transform.gameObject.CompareTag("Truck"))
             {
-                this.truck.GetComponent<HighlightOnMouseover>().SetSelected(true);
-                this.truck.GetComponentInChildren<TruckAudioController>().setTruckSelected(true);
+                GetComponent<HighlightOnMouseover>().SetSelected(true);
+                GetComponentInChildren<TruckAudioController>().setTruckSelected(true);
 
                 if (this.isSelectCargoPopupOpen) // if popup is already open do nothing
                 {
@@ -64,9 +61,7 @@ public class TruckClickerController : MonoBehaviour
 
                 // locate the popup for destination selection at the trucks position (the topleft corner at click position)
                 RectTransform selectDestinationTransform = this.selectDestinationCanvas.GetComponent<RectTransform>();
-                selectDestinationTransform.position = new Vector3(this.truck.position.x,
-                    this.truck.position.y + 1,
-                    this.truck.position.z - 1f);
+                selectDestinationTransform.position = transform.position + new Vector3(0, 1, -1f);
 
                 // Get Planet the truck is on (if any)
                 // TODO Get Ray to check from truck position Ray ray = this.mainCamera.ray(this.truck.position);
@@ -74,10 +69,10 @@ public class TruckClickerController : MonoBehaviour
                 if (planet != null)
                 {
                     PlanetCargoController pcc = planet.GetComponent<PlanetCargoController>();
-                    if (!pcc.producedGoods.Equals(EnumCargo._Nichts)) // if anything gets produced
+                    if (pcc.producedGoods != null) // if anything gets produced
                     {
                         this.toLoadCargo = pcc.producedGoods;
-                        loadCargoAndSelectDestinationButton.GetComponentInChildren<Text>().text = "Load " + pcc.producedGoods;
+                        loadCargoAndSelectDestinationButton.GetComponentInChildren<Text>().text = "Load " + pcc.producedGoods.cargoName;
                         loadCargoAndSelectDestinationButton.gameObject.SetActive(true);
 
                         this.setDestinationSelectionPopupActive(true);
@@ -109,7 +104,7 @@ public class TruckClickerController : MonoBehaviour
                 target.transform.position = targetLocation;
                 GetComponent<Truck>().target = target.transform;
 
-                this.truck.GetComponentInChildren<TruckAudioController>().setTruckMoving(true);
+                GetComponentInChildren<TruckAudioController>().setTruckMoving(true);
             }
 
             this.setDestinationSelectionPopupActive(false);
@@ -120,7 +115,7 @@ public class TruckClickerController : MonoBehaviour
     public void LoadCargoAndSelectDestinationButtonClick()
     {
         // load Cargo
-        this.truck.gameObject.GetComponent<Truck>().LoadCargo(this.toLoadCargo);
+        gameObject.GetComponent<Truck>().LoadCargo(this.toLoadCargo);
 
         this.setDestinationSelectionPopupActive(false);
 
@@ -147,12 +142,12 @@ public class TruckClickerController : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Planet"))
             {
                 Debug.Log(hit.transform.gameObject);
-                return new Vector3(hit.transform.position.x, this.truck.position.y, hit.transform.position.z);
+                return new Vector3(hit.transform.position.x, transform.position.y, hit.transform.position.z);
             }
         }
 
         // make a plane at Y level of truck to get click location on that plane
-        Plane planeTruck = new Plane(Vector3.up, this.truck.position.y);
+        Plane planeTruck = new Plane(Vector3.up, transform.position.y);
 
         float distance;
         if (planeTruck.Raycast(ray, out distance))
