@@ -30,4 +30,21 @@ public class PlanetCargoController : MonoBehaviour
             sign.UpdateContract(newContract);
         }
     }
+
+    public bool CheckContracts(Truck truck)
+    {
+        if (this.currentContract != null && truck != null)
+        {
+            CargoSO loadedCargo = truck.GetLoadedCargo();
+
+            if (this.currentContract.contractCargo.Equals(loadedCargo))
+            {
+                truck.UnloadCargo();
+                this.SetContract(null);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

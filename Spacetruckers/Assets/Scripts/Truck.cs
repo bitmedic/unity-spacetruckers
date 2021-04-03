@@ -44,6 +44,9 @@ public class Truck : MonoBehaviour
     {
         if (other.transform == target)
         {
+            // check if target is a planet and call checkContracts on that planet
+            // TODO: Wie???????
+
             Destroy(target.gameObject);
             target = null;
             this.GetComponentInChildren<TruckAudioController>().setTruckMoving(false);
@@ -54,6 +57,17 @@ public class Truck : MonoBehaviour
     {
         loadedCargo = cargo;
         SetCargoColor();
+    }
+
+    public void UnloadCargo()
+    {
+        loadedCargo = null;
+        SetCargoColor();
+    }
+
+    public CargoSO GetLoadedCargo()
+    {
+        return this.loadedCargo;
     }
 
     private void SetCargoColor()
