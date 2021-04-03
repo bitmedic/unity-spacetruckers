@@ -9,6 +9,8 @@ public class HighlightOnMouseover : MonoBehaviour
     public Color color = Color.white;
     public float width = 2;
 
+    private bool isSelected = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,13 @@ public class HighlightOnMouseover : MonoBehaviour
         outline.enabled = false;
     }
 
+    public void SetSelected(bool selected)
+    {
+        this.isSelected = selected;
+
+        outline.enabled = selected;        
+    }
+
     private void OnMouseEnter()
     {
         outline.enabled = true;
@@ -26,7 +35,11 @@ public class HighlightOnMouseover : MonoBehaviour
 
     private void OnMouseExit()
     {
-        outline.enabled = false;
+        if (!this.isSelected)
+        {
+            outline.enabled = false;
+        }
     }
+
 
 }
