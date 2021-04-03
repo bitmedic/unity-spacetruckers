@@ -9,13 +9,15 @@ public class Truck : MonoBehaviour
     public float truckSpeed = 5;
     public float turnSpeed = 10;
 
+    [SerializeField]
+    private EnumCargo loadedCargo;
 
-    internal EnumCargo loadedCargo;
+    private GameObject cargoBox;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cargoBox = transform.Find("Cargo")?.gameObject;
     }
 
     // Update is called once per frame
@@ -24,11 +26,14 @@ public class Truck : MonoBehaviour
         if (target)
         {
             // stay on current y level
-            Vector3 targetPosition = target.position;
+            Vector3 toTarget = target.position - transform.position;
 
-            transform.forward = Vector3.Lerp(transform.forward, targetPosition - transform.position, turnSpeed * Time.deltaTime);
+            transform.forward = Vector3.Lerp(transform.forward, toTarget, turnSpeed * Time.deltaTime);
 
             transform.position += transform.forward * truckSpeed * Time.deltaTime;
+
+            Debug.DrawRay(transform.position, transform.forward * truckSpeed, Color.red);
+            Debug.DrawRay(transform.position, toTarget.normalized * turnSpeed, Color.green);
         }
 
 
@@ -41,5 +46,10 @@ public class Truck : MonoBehaviour
             Destroy(target.gameObject);
             target = null;
         }
+    }
+
+    public void LoadCargo(EnumCargo cargo)
+    {
+        loadedCargo = cargo;
     }
 }

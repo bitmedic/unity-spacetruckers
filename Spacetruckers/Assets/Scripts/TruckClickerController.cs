@@ -40,7 +40,7 @@ public class TruckClickerController : MonoBehaviour
                 {
                     // set truck target to the click location on the plane of the truck
 
-                    this.truck.gameObject.GetComponent<Truck>().loadedCargo = this.toLoadCargo;
+                    this.truck.gameObject.GetComponent<Truck>().LoadCargo(this.toLoadCargo);
 
                     //TODO this should be a prefab
                     GameObject target = new GameObject();
