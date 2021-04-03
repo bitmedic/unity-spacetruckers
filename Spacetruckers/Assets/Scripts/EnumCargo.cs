@@ -10,5 +10,6 @@ public enum EnumCargo
     Ostereier,
     Zuckerstangen,
     TeddyBaeren,
-    LegoSteine
+    LegoSteine,
+    LavaLampen
 }

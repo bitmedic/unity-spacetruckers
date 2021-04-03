@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb4ad93a116cff748951294f508c7604, type: 3}
-  m_Name: Landluft
+  m_Name: Lavalamp
   m_EditorClassIdentifier: 
-  cargoName: Landluft
-  cargoColor: {r: 0, g: 0.6792453, b: 0.12432996, a: 1}
-  cargoSprite: {fileID: 21300000, guid: 87f21498826562d4bb047c6c7926e533, type: 3}
-  cargoType: 0
+  cargoName: Lavalampen
+  cargoColor: {r: 0, g: 1, b: 0.78456664, a: 1}
+  cargoSprite: {fileID: 21300000, guid: 59f07f8145428f044b3e78c2e45dce9f, type: 3}
+  cargoType: 7

@@ -102,7 +102,8 @@ public class TruckClickerController : MonoBehaviour
                 stopCollider.isTrigger = true;
 
                 target.transform.position = targetLocation;
-                GetComponent<Truck>().target = target.transform;
+                GameObject planet = this.getPlanetAtLocation(ray);
+                GetComponent<Truck>().SetTarget(target.transform, planet);
 
                 GetComponentInChildren<TruckAudioController>().setTruckMoving(true);
             }

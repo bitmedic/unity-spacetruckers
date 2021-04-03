@@ -31,7 +31,7 @@ public class PlanetCargoController : MonoBehaviour
         }
     }
 
-    public bool CheckContracts(Truck truck)
+    public bool CanFulfillContractHere(Truck truck)
     {
         if (this.currentContract != null && truck != null)
         {
@@ -39,12 +39,19 @@ public class PlanetCargoController : MonoBehaviour
 
             if (this.currentContract.contractCargo.Equals(loadedCargo))
             {
-                truck.UnloadCargo();
-                this.SetContract(null);
                 return true;
             }
         }
 
         return false;
+    }
+
+    public void DeliverContract(Truck truck)
+    {
+        if (CanFulfillContractHere(truck))
+        {
+            truck.UnloadCargo();
+            this.SetContract(null);
+        }
     }
 }

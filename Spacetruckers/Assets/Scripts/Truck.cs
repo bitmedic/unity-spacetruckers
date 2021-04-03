@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Truck : MonoBehaviour
 {
+    [SerializeField]
+    private Transform target;
+    private GameObject targetPlanet;
 
-    public Transform target;
     public float truckSpeed = 5;
     public float turnSpeed = 10;
 
@@ -46,9 +48,19 @@ public class Truck : MonoBehaviour
         {
             // check if target is a planet and call checkContracts on that planet
             // TODO: Wie???????
+            if (targetPlanet != null) {
+                Debug.Log("Arrived at planet " + targetPlanet.name);
+                var pcc = targetPlanet.GetComponent<PlanetCargoController>();
+                if (pcc != null && pcc.CanFulfillContractHere(this))
+                {
+                    Debug.Log("Truck can complete contract for " + this.loadedCargo.cargoName);
+                    pcc.DeliverContract(this);
+                }
+            }
 
             Destroy(target.gameObject);
             target = null;
+            targetPlanet = null;
             this.GetComponentInChildren<TruckAudioController>().setTruckMoving(false);
         }
     }
@@ -77,5 +89,15 @@ public class Truck : MonoBehaviour
         { 
             mr.material.color = loadedCargo.cargoColor;
         }
+        else
+        {
+            mr.material.color = Color.grey;
+        }
+    }
+
+    public void SetTarget(Transform target, GameObject planet)
+    {
+        this.target = target;
+        this.targetPlanet = planet;
     }
 }
